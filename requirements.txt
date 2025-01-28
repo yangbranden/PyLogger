@@ -1,0 +1,7 @@
+requests
+Pillow
+pynput
+Flask
+pycryptodome
+cryptography
+pyinstaller
