@@ -4,7 +4,7 @@ import string
 import sys
 
 # Number of times to go through obfuscation loop
-ITERATIONS = 41
+ITERATIONS = 199
 
 def deobfuscate(file_content):
     deobfuscated_bytes = file_content
