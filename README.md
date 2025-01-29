@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ## Compilation
 
-The compilation process can be somewhat complicated, so I added a `compile.sh` script. It will compile into a Windows PE using PyInstaller.  
+The compilation process can be somewhat complicated, so I added a `compile.sh` script. It will compile into a Windows executable using PyInstaller.  
 
 ```
 # Edit the settings in keylogger.py and compile.sh (and other files if necessary)
