@@ -1,72 +1,58 @@
-# PyLogger
+# Python Keylogger
 
-hello this is family friendly harmless coding guy nothing to see here ~
+This is a Python code Keylogger created for educational purposes, with several capabilities/features beyond a simple Python script running on a machine. 
 
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
+## Disclaimer
 
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
+I do NOT promote or encourage any illegal activities with this code. This repository is provided solely for educational purposes and exploration of technical capabilities.
 
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
+## Installation
 
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-![cool-fun-white-cat-dance-cool-and-fun-times](https://media1.tenor.com/m/5BYK-WS0__gAAAAd/cool-fun.gif)
-
-*hi just some fun notes haha nothing here*
+Standard installation for any Python project.
 
 ```
+git clone https://github.com/yangbranden/PyLogger.git
 python -m venv venv/
 source venv/Scripts/activate
 pip install -r requirements.txt
-# Edit the settings in keylogger.py and stuff
-./compile.sh 
-# wow now you have cool keylogger nice !! xdd
 ```
 
-Pro tip: there is also a cool registry key at `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run` that does cool things but you didn't hear it from me xdd
-![shdd](https://cdn.7tv.app/emote/01HVDRWM9800042QPZA2WPH2PY/4x.avif)
+## Compilation
 
-idunno wat versions of stuff are necessary so i just leave everything i using here lol
+The compilation process can be somewhat complicated, so I added a `compile.sh` script. It will compile into a Windows PE using PyInstaller.  
+
+```
+# Edit the settings in keylogger.py and compile.sh (and other files if necessary)
+./compile.sh 
+# Now you should have keylogger executable (named whatever the compile script specifies; default is Keylogger.exe)
+```
+
+## Features
+
+### Network and Email
+
+The keylogger has capability to send logs both using email using `smtplib` as well as over network communication via the `Flask` and `requests` libraries. Specify which to use in the main `keylogger.py` script by changing the `MODE` value to either `Mode.EMAIL` or `Mode.NETWORK`. 
+
+If you're using email, I'll leave how to figure out the SMTP server to you.
+
+If you're sending over network, make sure the 2 machines have network connectivity (obviously), then specify the IP address of the receiver, and as long as the `receiver.py` script is running and the encoding scheme (specified by `ENC_SCHEME` in both files) is the same, you should see folders/files containing the logs being generated.
+
+### Obfuscation
+
+The `obfuscate.py` file contains a slightly enhanced version of the Python obfuscating method seen [here](https://freecodingtools.org/tools/obfuscator/python) (essentially just an iterative version of this).
+
+The operations are essentially just:
+1. Zlib compress
+2. Base64 encode
+3. Reverse the bytes
+4. Run it through a lambda so it still executes
+
+If you're curious about how to undo the obfuscator, take a look at the `deobfuscate.py` script.
+
+## Dependency Versions
+
+Since idk how frequently versions of dependencies change, this is the last tested configuration of dependencies & versions that I successfully compiled on.
+
 ```
 Python 3.12.1
 
@@ -101,5 +87,3 @@ six                       1.17.0
 urllib3                   2.3.0
 Werkzeug                  3.1.3
 ```
-
-ok bye lmao
