@@ -81,4 +81,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         DESTINATION_ADDR = sys.argv[1]
     
-    app.run(host=DESTINATION_ADDR, port=8080, debug=True)
+    app.run(host=DESTINATION_ADDR, port=8080, debug=False)
